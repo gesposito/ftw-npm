@@ -14,9 +14,12 @@ var marker = require(markerFile);
 
 var feed = new follow.Feed(options);
 var last = null;
+var catchup = null;
 
 feed.filter = function(doc, req) {
   // req.query is the parameters from the _changes request and also feed.query_params.
+
+  catchup = null;
 
   // Filtering from config/filter.json
   var name = filter.name;
@@ -44,6 +47,8 @@ feed.filter = function(doc, req) {
     // doc['key']
     return true;
   }
+
+  console.info("Discarded: ", doc.name);
 
   return false;
 };
@@ -88,12 +93,20 @@ feed.on('timeout', function(info) {
   // Follow did not receive a heartbeat from couch in time. The passed object has .elapsed_ms set to the elapsed time
   console.warn('timeout: ', info);
 
-  // Going to skip the current seq (malformed?) if it is in the past (yesterday)
-  if (last && moment(last.doc.time.modified).add(24, 'h').isBefore()) {
+  // Going to skip the current seq (malformed?) if it isn't catchup
+  if (!catchup) {
     feed.pause();
     feed.since = parseInt(feed.since) + 1;
     feed.resume();
   }
+
+});
+
+feed.on('catchup', function(seq_id) {
+  //The feed has caught up to the update_seq from the confirm step. Assuming no subsequent changes, you have seen all the data.
+  console.info('catchup: ', seq_id);
+
+  catchup = seq_id;
 
 });
 
