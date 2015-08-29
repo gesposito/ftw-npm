@@ -1,0 +1,12 @@
+node_modules
+.env
+Dockerfile
+docker-compose.yml
+
+.DS_Store
+build/
+dist/
+dev_notes/
+*.diff
+*.log
+config.json

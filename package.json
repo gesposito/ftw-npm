@@ -1,0 +1,32 @@
+{
+  "name": "ftw-npm",
+  "version": "0.0.1",
+  "description": "Follows the npm registry and tweets updates",
+  "main": "main.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --opts tests/mocha.opts --compilers js:babel/register --recursive tests/**/*.js",
+    "start": "node main.js",
+    "forever": "forever forever.js"
+  },
+  "author": "Gianluca Esposito",
+  "license": "MIT",
+  "dependencies": {
+    "follow": "^0.12.1",
+    "forever-monitor": "^1.6.0",
+    "jsonfile": "^2.2.1",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "summarize-markdown": "^0.3.0",
+    "twit": "^2.1.0",
+    "twitter-text": "^1.13.2"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-runtime": "^5.8.20",
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "mocha-babel": "^3.0.0",
+    "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "react",
+  "keywords": ["react"],
+  "dep": "react",
+  "module": "react-module"
+}
