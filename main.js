@@ -28,8 +28,8 @@ feed.filter = function(doc, req) {
     return true;
   }
 
-  var keyword = filter.keyword;
-  if (keyword && filters.keyword(doc, keyword)) {
+  var keywords = filter.keywords;
+  if (keywords && filters.keyword(doc, keywords)) {
     // doc.keywords
     return true;
   }
@@ -49,6 +49,7 @@ feed.filter = function(doc, req) {
   }
 
   console.info("Discarded: ", doc.name);
+  feed.stop();
 
   return false;
 };
