@@ -21,6 +21,12 @@ feed.filter = function(doc, req) {
 
   catchup = null;
 
+  var dists = doc['dist-tags'];
+  var latest = dists ? dists.latest : null;
+  if (latest) {
+    doc = doc.versions[latest];
+  }
+
   // Filtering from config/filter.json
   var name = filter.name;
   if (name && filters.name(doc, name)) {
@@ -49,7 +55,6 @@ feed.filter = function(doc, req) {
   }
 
   console.info("Discarded: ", doc.name);
-  feed.stop();
 
   return false;
 };
