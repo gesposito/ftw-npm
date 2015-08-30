@@ -62,7 +62,7 @@ export default [
   // [3]
   , {
     "name": "tcomb-form-native",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "description": "react-native powered UI library for developing forms writing less code",
     "main": "index.js",
     "scripts": {
@@ -80,7 +80,7 @@ export default [
     },
     "homepage": "https://github.com/gcanti/tcomb-form-native",
     "peerDependencies": {
-      "react-native": ">=0.9.0",
+      "react-native": "^0.9.0",
       "tcomb-validation": "^1.0.4"
     },
     "devDependencies": {
@@ -89,8 +89,22 @@ export default [
       "react": "^0.13.3",
       "tape": "^3.5.0"
     },
-    "tags": ["tcomb", "form", "forms", "react", "react-native", "react-component"],
-    "keywords": ["tcomb", "form", "forms", "react", "react-native", "react-component"]
+    "tags": [
+      "tcomb",
+      "form",
+      "forms",
+      "react",
+      "react-native",
+      "react-component"
+    ],
+    "keywords": [
+      "tcomb",
+      "form",
+      "forms",
+      "react",
+      "react-native",
+      "react-component"
+    ]
   }
   // [4]
   , {
