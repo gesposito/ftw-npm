@@ -23,8 +23,9 @@ feed.filter = function(doc, req) {
 
   var dists = doc['dist-tags'];
   var latest = dists ? dists.latest : null;
+  var latestDoc = null;
   if (latest) {
-    doc = doc.versions[latest];
+    latestDoc = doc.versions[latest];
   }
 
   // Filtering from config/filter.json
@@ -35,13 +36,13 @@ feed.filter = function(doc, req) {
   }
 
   var keywords = filter.keywords;
-  if (keywords && filters.keyword(doc, keywords)) {
+  if (keywords && filters.keyword(latestDoc, keywords)) {
     // doc.keywords
     return true;
   }
 
   var dep = filter.dep;
-  if (dep && filters.dep(doc, dep)) {
+  if (dep && filters.dep(latestDoc, dep)) {
     // doc.dependencies['key']
     // doc.devDependencies['key']
     // doc.peerDependencies['key']
@@ -49,7 +50,7 @@ feed.filter = function(doc, req) {
   }
 
   var module = filter.module;
-  if (module && filters.module(doc, module)) {
+  if (module && filters.module(latestDoc, module)) {
     // doc['key']
     return true;
   }

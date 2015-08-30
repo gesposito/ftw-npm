@@ -1,6 +1,6 @@
 {
-  "name": "react",
-  "keywords": ["react"],
-  "dep": "react",
-  "module": ""
+  "name": "react-native",
+  "keywords": ["react-native", "ReactNative"],
+  "dep": "react-native",
+  "module": "react-native-module"
 }
