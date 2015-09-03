@@ -25,10 +25,15 @@ and tweak values coming from https://apps.twitter.com/
 Make sure to set keywords to filter `npm` packages for, in `config/filter.json`, e.g.
 ```
 {
-  "name": "react",
-  "keywords": ["react"],
-  "dep": "react",
-  "module": ""
+  "db": "https://<url>.firebaseio.com/"
+}
+```
+
+## [Optional] persistence (Firebase)
+Configure `config/base.json` with a Firebase endpoint, e.g.
+```
+{
+  "db": "https://<url>.firebaseio.com/"
 }
 ```
 

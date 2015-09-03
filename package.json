@@ -11,6 +11,7 @@
   "author": "Gianluca Esposito",
   "license": "MIT",
   "dependencies": {
+    "firebase": "^2.2.9",
     "follow": "^0.12.1",
     "forever-monitor": "^1.6.0",
     "jsonfile": "^2.2.1",
