@@ -26,7 +26,6 @@
     "babel-runtime": "^5.8.20",
     "chai": "^3.2.0",
     "mocha": "^2.2.5",
-    "mocha-babel": "^3.0.0",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0"
   }
