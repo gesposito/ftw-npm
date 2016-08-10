@@ -1,9 +1,9 @@
 var forever = require('forever-monitor');
 
 var child = new (forever.Monitor)('main.js', {
-  max: 3,
+  max   : 3,
   silent: true,
-  args: []
+  args  : []
 });
 
 child.on('exit', function () {

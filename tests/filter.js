@@ -3,6 +3,7 @@ import {
   assert,
   expect
 } from './test_helper.js';
+
 import filters from '../lib/filters.js';
 import mock from '../mocks/doc.js';
 
